@@ -1,13 +1,13 @@
 from openai import OpenAI
-from config import Config
+from backend.config import Config
 
-client=OpenAI(
+ai_client=OpenAI(
     api_key=Config.GEMINI_API_KEY,
     base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
 )
 
 def chat(user_query:str)->str:
-    response=client.chat.completions.create(
+    response=ai_client.chat.completions.create(
         model="gemma-4-31b-it",
         messages=[
             {
