@@ -1,3 +1,5 @@
 fastapi[standard]
 openai
 langchain
+qdrant-client
+langchain-qdrant
