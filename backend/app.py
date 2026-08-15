@@ -1,9 +1,14 @@
 from fastapi import FastAPI
 
-app=FastAPI()
+
+app = FastAPI(
+    title="Document Intelligence Agent",
+    description="RAG-based document search and intelligence API",
+)
+
 
 @app.get("/")
 def root():
     return {
-        "message": "Application is running"
+        "message": "Document Intelligence Agent is running"
     }
