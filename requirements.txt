@@ -3,3 +3,4 @@ openai
 langchain
 qdrant-client
 langchain-qdrant
+langchain-text-splitters
