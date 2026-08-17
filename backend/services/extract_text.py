@@ -17,8 +17,6 @@ def extract_pdf_text(content: bytes):
         pages.append({
             "page": page_number,
             "text": text,
-            "start": start_position,
-            "end": end_position
         })
 
         current_position = end_position
