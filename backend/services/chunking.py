@@ -5,13 +5,16 @@ splitter=RecursiveCharacterTextSplitter(
     chunk_overlap=200
 )
 
-def chunker(content:list[str]):
+def chunker(pages):
     chunks=[]
-    for page in content:
+    i=0
+    for page in pages:
         page_chunks=splitter.split_text(page["text"])
         for chunk in page_chunks:
+            i+=1
             chunks.append(
                 {
+                    "chunk_id":i,
                     "page":page["page"],
                     "chunk":chunk
                 }
