@@ -1,8 +1,8 @@
-import fitz
+import pymupdf
 
 
 def extract_pdf_text(content: bytes):
-    document = fitz.open(stream=content, filetype="pdf")
+    document = pymupdf.open(stream=content, filetype="pdf")
 
     pages = []
     current_position = 0
