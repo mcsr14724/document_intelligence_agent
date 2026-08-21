@@ -1,5 +1,7 @@
 from fastapi import APIRouter, UploadFile, File
 from typing import Annotated
+from backend.services.documnet_loader import load_document
+import uuid
 
 router=APIRouter(
     prefix="/documents",
@@ -8,6 +10,10 @@ router=APIRouter(
 
 @router.post("/")
 async def upload_files(
-    files: Annotated[UploadFile,File(...)]
+    file: Annotated[UploadFile, File(...)]
 ):
-    pass
+    content = await file.read()
+
+    document_id = str(uuid.uuid4())
+
+    load_document(content,document_id)  
