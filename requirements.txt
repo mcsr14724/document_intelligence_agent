@@ -1,6 +1,8 @@
 fastapi[standard]
 openai
 langchain
-qdrant-client
+qdrant-client[fastembed]
 langchain-qdrant
 langchain-text-splitters
+pymupdf
+langchain-google-genai
